@@ -9,8 +9,8 @@ import Foundation
 import Foundation
 import WebKit
 
-class GameAwaitingResourceManager: ObservableObject {
-    @Published var loadingState: LoadingStatuses = .idle
+class CrossAwaitingResourceManager: ObservableObject {
+    @Published var loadingState: CrossLoadingStatuses = .idle
     let url: URL
     private var webView: WKWebView?
     private var progressObservation: NSKeyValueObservation?

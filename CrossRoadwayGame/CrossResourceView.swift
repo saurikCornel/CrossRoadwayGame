@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct AwaitingResourcesView: View {
+struct CrossResourceView: View {
     var progress: Double
     
     var body: some View {
@@ -89,5 +89,5 @@ struct AwaitingResourcesView: View {
 }
 
 #Preview {
-    AwaitingResourcesView(progress: 0.75)
+    CrossResourceView(progress: 0.75)
 }

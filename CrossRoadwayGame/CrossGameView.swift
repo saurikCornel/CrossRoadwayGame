@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 import WebKit
 
-struct GameView: UIViewRepresentable {
-    @ObservedObject var viewModel: GameAwaitingResourceManager
+struct CrossGameView: UIViewRepresentable {
+    @ObservedObject var viewModel: CrossAwaitingResourceManager
     
     func makeUIView(context: Context) -> WKWebView {
         debugPrint("Creating WKWebView with URL: \(viewModel.url)")
@@ -24,10 +24,10 @@ struct GameView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, WKNavigationDelegate {
-        var parent: GameView
+        var parent: CrossGameView
         private var isRedirecting = false
         
-        init(_ parent: GameView) {
+        init(_ parent: CrossGameView) {
             self.parent = parent
             debugPrint("Coordinator initialized")
         }

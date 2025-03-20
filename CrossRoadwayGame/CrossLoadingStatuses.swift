@@ -1,14 +1,14 @@
 
 import Foundation
 
-enum LoadingStatuses: Equatable {
+enum CrossLoadingStatuses: Equatable {
     case idle
     case loading(progress: Double)
     case loaded
     case failed(Error)
     case noInternet
     
-    static func == (lhs: LoadingStatuses, rhs: LoadingStatuses) -> Bool {
+    static func == (lhs: CrossLoadingStatuses, rhs: CrossLoadingStatuses) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle), (.loaded, .loaded), (.noInternet, .noInternet):
             return true

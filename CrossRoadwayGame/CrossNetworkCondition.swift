@@ -8,8 +8,8 @@
 import Foundation
 import Network
 
-class NetworkCondition {
-    static let shared = NetworkCondition()
+class CrossNetworkCondition {
+    static let shared = CrossNetworkCondition()
     private let monitor = NWPathMonitor()
     private var isNetworkAvailable: Bool = true
     

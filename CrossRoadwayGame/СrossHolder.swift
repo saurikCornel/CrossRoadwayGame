@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 import WebKit
 
-struct AwaitingResourcesHolder: View {
-    @StateObject var viewModel: GameAwaitingResourceManager
+struct СrossHolder: View {
+    @StateObject var viewModel: CrossAwaitingResourceManager
     
-    init(viewModel: GameAwaitingResourceManager) {
+    init(viewModel: CrossAwaitingResourceManager) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
         ZStack {
-            GameView(viewModel: viewModel)
+            CrossGameView(viewModel: viewModel)
                 .opacity(viewModel.loadingState == .loaded ? 1 : 0.5)
             
             if case .loading(let progress) = viewModel.loadingState {
                 GeometryReader { geo in
-                    AwaitingResourcesView(progress: progress)
+                    CrossResourceView(progress: progress)
                     .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                     .background(Color.black)
                 }
